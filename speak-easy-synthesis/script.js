@@ -85,3 +85,8 @@ rate.onchange = function() {
 voiceSelect.onchange = function(){
   speak();
 }
+
+
+
+
+
