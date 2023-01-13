@@ -81,7 +81,25 @@ function testSpeech() {
     diagnosticPara.textContent = 'Error occurred in recognition: ' + event.error;
   }
   
-
+  recognition.onaudiostart = function(event) {
+      //Fired when the user agent has started to capture audio.
+      console.log('SpeechRecognition.onaudiostart');
+  }
+  
+  recognition.onaudioend = function(event) {
+      //Fired when the user agent has finished capturing audio.
+      console.log('SpeechRecognition.onaudioend');
+  }
+  
+  recognition.onend = function(event) {
+      //Fired when the speech recognition service has disconnected.
+      console.log('SpeechRecognition.onend');
+  }
+  
+  recognition.onnomatch = function(event) {
+      //Fired when the speech recognition service returns a final result with no significant recognition. This may involve some degree of recognition, which doesn't meet or exceed the confidence threshold.
+      console.log('SpeechRecognition.onnomatch');
+  }
   
 
 testBtn.addEventListener('click', testSpeech);
